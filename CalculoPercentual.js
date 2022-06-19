@@ -14,7 +14,7 @@ for(i = 0; i < estados.length; i++){
 }
 for (i = 0; i < estados.length; i++){
     const porcentagem  = estados[i].valor * 100 /soma
-    console.log('O Estado de ' + estados[i].estado +' é represantado por '+ porcentagem.toFixed(1) + '% dentro do valor total mensal da distribuidora de R$' + soma.toFixed(2))
+    console.log('O Estado de: ' + estados[i].estado +' é represantado por '+ porcentagem.toFixed(1) + '% dentro do valor total mensal da distribuidora de R$' + soma.toFixed(2))
 }
 
 
