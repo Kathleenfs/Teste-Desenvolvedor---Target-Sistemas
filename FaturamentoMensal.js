@@ -120,36 +120,45 @@ const mes = [{
 }]
 
 
+function faturamento(ar){
+let somaDia = 0
+let valorTotal = 0
+let qtdDias = 0
+
+    for(i = 0; i < ar.length; i++){
+
+        parseFloat(ar[i].valor.toFixed(3))
+        if (ar[i].valor != 0){
+        qtdDias = qtdDias + 1
+        }
+
+        valorTotal += ar[i].valor
+    }
+
+const media = valorTotal/qtdDias
+
+    for(i = 0; i < ar.length; i++){
+        if(ar[i].valor > media){
+            somaDia = somaDia + 1
+        }
+    }
+console.log('Quantidade de dias que tiveram o valor do faturamento diario maior que a media mensal foram de '+ somaDia + " dias")
+}
+
+function maiorMenor(ar){
+
 let maior = 0
 let menor = 0
-let soma = 0
-let somaDia = 0
-let contaDias = 0
 
-for(i = 0; i < mes.length; i++){
-    const conversao = parseFloat(mes[i].valor.toFixed(3))
-    if (mes[i].valor != 0){
-    contaDias = contaDias + 1
-    }
-    
-    soma += mes[i].valor
-
-    if(mes[i].valor > maior){
-        maior = mes[i].valor
-    }else{
-        menor = mes[i].valor
-    }
-
+    for(i = 0; i < ar.length; i++){
+         if(ar[i].valor > maior){
+            maior = ar[i].valor
+        }else{
+            menor = ar[i].valor
+        }
 }
-
-const media = soma/contaDias
-
-
-for(i = 0; i < mes.length; i++){
-    if(mes[i].valor > media){
-        somaDia = somaDia + 1
-    }
-}
-console.log('Quantidade de dias que tiveram o valor do faturamento diario maior que a media mensal foram de '+ somaDia + " dias")
 console.log('O menor valor foi: ' + menor.toFixed(2) + 'O maior valor foi: '+ maior.toFixed(2))
+}
 
+faturamento(mes)
+maiorMenor(mes)
