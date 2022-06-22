@@ -1,8 +1,11 @@
-let string = "Brasil";
+function reversao(str){
+
 let novaString = ""
 
-for(i = string.length - 1; i >=0; i--){
-    novaString += string[i]
+for(i = str.length - 1; i >=0; i--){
+    novaString += str[i]
 
 }
 console.log(novaString)
+}
+reversao("Brasil")
